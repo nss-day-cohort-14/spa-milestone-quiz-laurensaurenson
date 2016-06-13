@@ -3,19 +3,21 @@ function populatePage (inventory) {
   var finalCars = document.getElementById("container");
   var carHTML = "";
 
-
   for (var i = 0; i < inventory.length; i++) {
     var currentCar = inventory[i];
-    carHTML += `<div class="col-sm-4" style="border: 2px solid ${currentCar.color}"><h1>${currentCar.model}</h1>`;
-    
-    carHTML += `</div>`
-    // console.log("carHTML: ", carHTML);
+    var counter = i;
+    carHTML += `<div class="col-sm-4 carBox border" id="car-${counter}" style="border-color: ${currentCar.color}"><h1>${currentCar.make} ${currentCar.model}</h1>`;
+    carHTML += `<h5>${currentCar.year} | ${currentCar.color}</h5>`;
+    carHTML += `<h6>Cost: ${currentCar.price}</h6>`;
+    carHTML += `<h6>Purchased: ${currentCar.purchased}</h6>`;
+    carHTML += `<p>${currentCar.description}</p>`
+    carHTML += `</div>`;
   }
 
   finalCars.innerHTML = carHTML;
 
   // Now that the DOM is loaded, establish all the event listeners needed
-  // CarLot.activateEvents();
+  CarLot.activateEvents();
 }
 
 // Load the inventory and send a callback function to be
