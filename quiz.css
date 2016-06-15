@@ -3,6 +3,7 @@
   border-style: solid;
 }
 
-.bordered {
+.selected {
   border-width: 4px;
+  background-color: #c6fdf4;
 }
