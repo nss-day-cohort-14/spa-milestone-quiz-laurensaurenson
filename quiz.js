@@ -1,5 +1,5 @@
+// populates page with json object information //
 function populatePage (inventory) {
-  // Loop over the inventory and populate the page
   var finalCars = document.getElementById("container");
   var carHTML = "";
 
@@ -16,11 +16,8 @@ function populatePage (inventory) {
 
   finalCars.innerHTML = carHTML;
 
-  // Now that the DOM is loaded, establish all the event listeners needed
   CarLot.activateEvents();
 }
 
-// Load the inventory and send a callback function to be
-// invoked after the process is complete
-
+// runs load json with populate as a callback //
 CarLot.loadInventory(populatePage);

@@ -1,11 +1,13 @@
 var CarLot = ( function (Cars) {
 
+// called onkeyup to replace description //
   CarLot.replaceDescription =  function () {
     var selectedCard = document.getElementsByClassName("selected");
     var textInput = document.getElementById("text-input");  
     var replacedDescript = selectedCard[0].getElementsByTagName("p");
     if (event.keyCode === 13) {
       for (var i = 0; i < selectedCard.length; i++) {
+        selectedCard[i].style.backgroundColor = "#fff";
         selectedCard[i].classList.remove("selected");
       }
       return textInput.value = "";
@@ -13,6 +15,7 @@ var CarLot = ( function (Cars) {
     replacedDescript[0].innerText = textInput.value;
   };
 
+// borders and changes background color //
   CarLot.border = function (place, color) {
     var cardsToUnborder = document.getElementsByClassName("carBox");
     console.log("place: ", place);
@@ -22,6 +25,7 @@ var CarLot = ( function (Cars) {
     CarLot.selectTextInput();
   }
 
+// unborders and reverts background color to white //
   CarLot.unborder = function () {
     var cardsToUnborder = document.getElementsByClassName("carBox");
     for (var i = 0; i < cardsToUnborder.length; i++) {
@@ -30,6 +34,7 @@ var CarLot = ( function (Cars) {
     }
   }  
 
+// selects and clears text input -- used when clicking on card to change description // 
   CarLot.selectTextInput = function () {    
     var textInput = document.getElementById("text-input");  
     textInput.value = "";
