@@ -18,7 +18,6 @@ var CarLot = ( function (Cars) {
 // borders and changes background color //
   CarLot.border = function (place, color) {
     var cardsToUnborder = document.getElementsByClassName("carBox");
-    console.log("place: ", place);
     CarLot.unborder();
     place.classList.add("selected");
     place.style.backgroundColor = color;
