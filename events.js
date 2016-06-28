@@ -1,14 +1,14 @@
-var CarLot = (function () {
+var CarLot = (function (Cars) {
 
 // Calls by tag name then adds event listener through array //
-  CarLot.activateEvents = function () {
+  Cars.activateEvents = function () {
     var cars = document.getElementsByTagName("car");
 
     for (var i = 0; i < cars.length; i++) {
       cars[i].addEventListener("click", function () {
         var car = event.currentTarget;
         var background = "#c6fdf4";
-        CarLot.border(car, background);
+        Cars.border(car, background);
       });
     }
 
@@ -17,5 +17,5 @@ var CarLot = (function () {
     textInput.setAttribute("onkeyup", "CarLot.replaceDescription()");
   }
 
-  return CarLot;
+  return Cars;
 })(CarLot);
